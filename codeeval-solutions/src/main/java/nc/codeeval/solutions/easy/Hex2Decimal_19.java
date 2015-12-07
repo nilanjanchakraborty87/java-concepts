@@ -3,8 +3,6 @@ package nc.codeeval.solutions.easy;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * You will be given a hexadecimal (base 16) number. Convert it into decimal
@@ -32,17 +30,6 @@ import java.util.Map;
  */
 public class Hex2Decimal_19 {
 
-	private static final Map<Character, Integer> HEX_DIGIT_MAPPER = new HashMap<Character, Integer>();
-
-	static {
-		HEX_DIGIT_MAPPER.put('a', 10);
-		HEX_DIGIT_MAPPER.put('b', 11);
-		HEX_DIGIT_MAPPER.put('c', 12);
-		HEX_DIGIT_MAPPER.put('d', 13);
-		HEX_DIGIT_MAPPER.put('e', 14);
-		HEX_DIGIT_MAPPER.put('f', 15);
-	}
-
 	public static void main(String[] args) {
 		if (args != null && args.length >= 1) {
 			try {
@@ -55,9 +42,6 @@ public class Hex2Decimal_19 {
 					for (int i = 0; i < digits.length; i++) {
 						int digit = Character.getNumericValue(digits[i]);
 						int pow = length - (i + 1);
-						if(digit > 9)
-							digit = HEX_DIGIT_MAPPER.get(digits[i]);
-						
 						dec = dec + digit * (int)Math.pow(16, pow);
 					}
 					System.out.println(dec);
