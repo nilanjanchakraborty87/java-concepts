@@ -45,7 +45,7 @@ public class BitPositions_6 {
 					int pos2 = Integer.valueOf(items[2]);
 					
 					//bitwise operator solution
-					/*if(((number>>1) & 1) == ((number>>2) & 1))
+					/*if(((number>> pos1 - 1) & 1) == ((number>>pos2 -1) & 1))
 						System.out.println(true);
 					else
 						System.out.println(false);*/
